@@ -1,8 +1,9 @@
-function combineArrays(arr1, arr2, newElement){
-    return [...arr1, ...arr2, ...newElement];
-}
+function greetPeople(greeting = "Hello", ...names) {
+    return names.map(name => `${greeting}, ${name}`)
+  }
 
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-const newArray = combineArrays(arr1, arr2, 13);
-console.log(newArray);
+const greetings = greetPeople("Hi", "Alice", "Bob", "Charlie");
+console.log(greetings); 
+
+const defaultGreetings = greetPeople(undefined, "Alice", "Bob");
+console.log(defaultGreetings);
