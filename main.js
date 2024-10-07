@@ -1,9 +1,12 @@
-function greetPeople(greeting = "Hello", ...names) {
-    return names.map(name => `${greeting}, ${name}`)
+const user = {
+    name: 'John Doe',
+    age: 25,
+    skills: ['JavaScript', 'React', 'Node.js']
+  };
+  
+  function extractUserInfo({name, age, skills}) {
+    return `${name} is ${age} years old and known ${skills[1]}`
   }
-
-const greetings = greetPeople("Hi", "Alice", "Bob", "Charlie");
-console.log(greetings); 
-
-const defaultGreetings = greetPeople(undefined, "Alice", "Bob");
-console.log(defaultGreetings);
+  
+  const userInfo = extractUserInfo(user);
+  console.log(userInfo); 
